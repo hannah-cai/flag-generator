@@ -580,7 +580,7 @@ function setup() {
     rect(flagWidth, 0, flagWidth / 2, flagHeight);
     pop();
 
-    textFont('Open Sans');
+    textFont('Courier New');
     textStyle(BOLD);
     textAlign(CENTER);
     textSize(16);
