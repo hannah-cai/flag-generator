@@ -4,10 +4,68 @@
         <title>Flag Generator</title>
         <meta charset="utf-8">
         <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-        <style> body {padding: 0; margin: 0;} </style>
+        <style> 
+            @import url(https://fonts.googleapis.com/css?family=Asap:400,500,600,700);
+            body {padding: 0; margin: 0;} 
+            h1 {
+                line-height: 1.4;
+                font-family: 'Asap', sans-serif;
+                font-weight: 500;
+                color: dimgray;
+                font-size: 16px;
+                display: block;
+                margin: auto; 
+                position: fixed;
+                width: 500px;
+                height: 200px;
+                top: 610px;
+                left: 50%;
+                margin-top: -100px;
+                margin-left: -250px;
+                text-align: center;
+            }
+            p {
+                line-height: 1.4;
+                font-family: 'Asap', sans-serif;
+                font-weight: 400;
+                color: darkgray;
+                font-size: 16px;
+                display: block;
+                margin: auto; 
+                position: fixed;
+                width: 500px;
+                height: 200px;
+                top: 650px;
+                left: 50%;
+                margin-top: -100px;
+                margin-left: -250px;
+                text-align: center;
+            }
+            figcaption {
+                line-height: 1.4;
+                font-family: 'Asap', sans-serif;
+                font-weight: 400;
+                color: darkgray;
+                font-size: 10px;
+                font-style: italic;
+                display: block;
+                margin: auto; 
+                position: fixed;
+                width: 500px;
+                height: 200px;
+                top: 710px;
+                left: 50%;
+                margin-top: -100px;
+                margin-left: -250px;
+                text-align: center;
+            }
+        </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
         <script src="sketch.js"></script>
     </head>
-    <body>
+    <body style="padding: none">
+        <h1>Flag Generator</h1>
+        <p>move mouse to the left to generate flags that are more democratic;<br>vice versa to generate flags that are less democratic</p>
+        <figcaption>data taken from the Democracy Index</figcaption>
     </body>
 </html>

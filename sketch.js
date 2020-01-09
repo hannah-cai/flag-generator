@@ -20,9 +20,6 @@ var lRed, lYellow, lDarkBlue, lLightBlue, lGreen;
 var lColorShuffle, lbgStyle = [];
 
 function preload() {
-    asapMed = loadFont('Asap/Asap-Medium.ttf');
-    asapReg = loadFont('Asap/Asap-Regular.ttf');
-    asapRI = loadFont('Asap/Asap-Italic.ttf');
     britFlag = loadImage("brit-flag.png");
     maple = loadImage("maple.png");
     seal = loadImage("seal.png");
@@ -582,21 +579,6 @@ function setup() {
     rect(-1, flagHeight, flagWidth + 2, flagWidth / 8);
     rect(flagWidth, 0, flagWidth / 2, flagHeight);
     pop();
-
-    textFont(asapMed);
-    textAlign(CENTER);
-    textSize(16);
-    noStroke();
-    fill(0);
-    text('Flag Generator Project', width / 2, height / 2 + 50);
-    fill("dimgray");
-    textFont(asapReg);
-    textSize(14);
-    text('move mouse to the left to generate flags that are more democratic;', width / 2, height / 2 + 75);
-    text('vice versa to generate flags that are less democratic', width / 2, height / 2 + 95);
-    textSize(10);
-    textFont(asapRI);
-    text('data taken from the Democracy Index', width / 2, height / 2 + 120);
 }
 
 function star(x, y, radius1, radius2, npoints) {
