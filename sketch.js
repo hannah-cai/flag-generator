@@ -21,10 +21,10 @@ var lRed, lYellow, lDarkBlue, lLightBlue, lGreen;
 var lColorShuffle, lbgStyle = [];
 
 function preload() {
-//    britFlag = loadImage("brit-flag.png");
-//    maple = loadImage("maple.png");
-//    seal = loadImage("seal.png");
-//    crescent = loadImage("crescent.png");
+    britFlag = loadImage("brit-flag.png");
+    maple = loadImage("maple.png");
+    seal = loadImage("seal.png");
+    crescent = loadImage("crescent.png");
 }
 
 function setup() {
