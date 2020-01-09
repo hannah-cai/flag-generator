@@ -4,6 +4,7 @@ var flagWidth;
 var pMouseX;
 var white, black;
 var fgStyle;
+var refresh;
 
 //probability variables
 var bg, fg, sr;
@@ -20,19 +21,37 @@ var lRed, lYellow, lDarkBlue, lLightBlue, lGreen;
 var lColorShuffle, lbgStyle = [];
 
 function preload() {
-    britFlag = loadImage("brit-flag.png");
-    maple = loadImage("maple.png");
-    seal = loadImage("seal.png");
-    crescent = loadImage("crescent.png");
+//    britFlag = loadImage("brit-flag.png");
+//    maple = loadImage("maple.png");
+//    seal = loadImage("seal.png");
+//    crescent = loadImage("crescent.png");
 }
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
+}
+
+function star(x, y, radius1, radius2, npoints) {
+    let angle = TWO_PI / npoints;
+    let halfAngle = angle / 2.0;
+    strokeJoin(MITER);
+    beginShape();
+    for (let a = 0; a < TWO_PI; a += angle) {
+        let sx = x + cos(a) * radius2;
+        let sy = y + sin(a) * radius2;
+        vertex(sx, sy);
+        sx = x + cos(a + halfAngle) * radius1;
+        sy = y + sin(a + halfAngle) * radius1;
+        vertex(sx, sy);
+    }
+    endShape(CLOSE);
+}
+
+function drawFlag() {
     background(245);
     noStroke();
-
     //size ratio
-    sr = map(mouseX, 0, width, 1, 0);
+    sr = map(constrain(mouseX, width / 3, width - width / 3), width / 3, width - width / 3, 1, 0);
     if (random(1) <= sr) {
         flagWidth = flagHeight * hsr[floor(random(hsr.length))];
     } else {
@@ -75,7 +94,7 @@ function setup() {
     fgStyle = styles[floor(random(styles.length))];
 
     //background style
-    bg = map(mouseX, 0, width, 1, 0);
+    bg = map(constrain(mouseX, width / 3, width - width / 3), width / 3, width - width / 3, 1, 0);
     //high democracy index
     if (random(1) <= bg) {
         var styles = ["cross", "cross", "cross", "crossD", "crossD", "corner", "corner", "triVert", "triVert"];
@@ -581,25 +600,23 @@ function setup() {
     pop();
 }
 
-function star(x, y, radius1, radius2, npoints) {
-    let angle = TWO_PI / npoints;
-    let halfAngle = angle / 2.0;
-    strokeJoin(MITER);
-    beginShape();
-    for (let a = 0; a < TWO_PI; a += angle) {
-        let sx = x + cos(a) * radius2;
-        let sy = y + sin(a) * radius2;
-        vertex(sx, sy);
-        sx = x + cos(a + halfAngle) * radius1;
-        sy = y + sin(a + halfAngle) * radius1;
-        vertex(sx, sy);
-    }
-    endShape(CLOSE);
+function draw() {
+    background(245);
+    frameRate(1);
+    drawFlag();
+//    let m = millis();
+//    stroke("darkgray");
+//    strokeWeight(0.25);
+//    line(width / 3, 580, width - width / 3, 580);
+//    noStroke();
+//    fill("darkgray");
+//    rectMode(CENTER);
+//    ellipse(constrain(mouseX, width / 3, width - width / 3), 580, 5); 
+//    rectMode(CORNER);
 }
 
-function draw() {
-    frameRate(1);
-    setup();
-    print(flagWidth);
-}
+//function mouseClicked() {
+////    background(245);
+//    drawFlag();
+//}
 
